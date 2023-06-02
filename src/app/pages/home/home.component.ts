@@ -28,4 +28,16 @@ export class HomeComponent {
   name:"eeee",
   id:5
 }
- ]}
+]
+
+public constructor () {
+  this.func1();
+
+}
+public func1(){
+  alert('func1');
+}
+public func2(){
+  alert('func2');
+}
+}
