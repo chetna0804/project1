@@ -6,38 +6,46 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
- public data="hello World!!";
- public color= "text-primary";
- public data2 = false;
- public arr1=[
- {  name: "aaaaaa",
-    id:1,
-},{
-  name:"bbbbb",
-  id:2
-},
-{
-  name:"cccc",
-  id:3
-},
-{
-  name:"ddddd",
-  id:4
-},
-{
-  name:"eeee",
-  id:5
+  public productDetails:any;
+
+public getProductDetail(product:any){
+console.log(product);
+this.productDetails=product;
 }
+  
+public product=[
+ { id:1,
+  name:'product 1',
+  price:300,
+  description:'This is a wider card with supporting text below as a natural lead-in to additional content.',
+  imgurl:'assets/images/home/t-shirt.jpg'
+ },
+ { id:2,
+  name:'product 2',
+  price:350,
+  description:'This is a wider card with supporting text below as a natural lead-in to additional content.',
+  imgurl:'assets/images/home/t-shirt.jpg'
+ },
+ { id:3,
+  name:'product 3',
+  price:500,
+  description:'This is a wider card with supporting text below as a natural lead-in to additional content.',
+  imgurl:'assets/images/home/t-shirt.jpg'
+ },
+ { id:4,
+  name:'product 4',
+  price:250,
+  description:'This is a wider card with supporting text below as a natural lead-in to additional content.',
+  imgurl:'assets/images/home/t-shirt.jpg'
+ },
+ { id:5,
+  name:'product 5',
+  price:640,
+  description:'This is a wider card with supporting text below as a natural lead-in to additional content.',
+  imgurl:'assets/images/home/t-shirt.jpg'
+ }
+
 ]
+ 
 
-public constructor () {
-  this.func1();
-
-}
-public func1(){
-  alert('func1');
-}
-public func2(){
-  alert('func2');
-}
 }

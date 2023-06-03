@@ -1,13 +1,55 @@
-<p class="{{color}}">homepage</p>
-<div>{{data}}</div>
-<p class="{{data2==true?'text-primary':'text-secondary'}}">checker</p>
-<ul>
-    <li *ngFor="let arr1 of arr1">
-        <span class="mr-3">{{arr1.id}}</span>
-        <span>{{arr1.name}}</span>
-    </li>
-</ul>
 
-<h1 *ngIf="data2">111111111111</h1>
-<p *ngIf="! data2">pppppp</p>
-<button (click)="func2()">submit</button>
+ <div class="container">
+  <div class="product ">
+
+    <div class="card " style="width: 18rem;" *ngFor=" let product of product">
+      <img [src]="product.imgurl" class="card-img-top" alt="...">
+      <div class="card-body">
+        
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{product.name}}</li>
+          <li class="list-group-item">₹{{product.price}}</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+        <a href="#" class="btn btn-primary ms-2" (click)="getProductDetail(product)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Product Detail</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+ <!--product detail-->
+ <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Product Detail</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-3" style="max-width: 540px;" *ngIf="productDetails">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/home/t-shirt.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{productDetails.name}}</h5>
+                <p class="price">₹{{productDetails.price}}</p>
+                <p class="card-text">{{productDetails.description}}</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
